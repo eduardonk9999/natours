@@ -8,6 +8,9 @@
     @include respond(tab-port){
       margin-left: $gutter-vertical-small;
     }
+    @include respond(phone){
+      margin: 0 auto 3rem auto;
+    }
   }
 
 
