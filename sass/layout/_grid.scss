@@ -4,15 +4,36 @@
 
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    @include respond(tab-port){
+      margin-left: $gutter-vertical-small;
+    }
   }
 
+
+  @include respond(tab-port){
+    max-width: 50rem;
+  }
+
+
   @include clearfix;
+
+  
 
   //pega todos os elementos que a class começa com col-
   [class^="col-"] {
     float: left;
+
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+      @include respond(tab-port){
+        margin-left: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    @include respond(tab-port){
+      width: 100% !important;
     }
   }
   .col-1-of-2 {
