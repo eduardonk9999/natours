@@ -163,3 +163,47 @@
     font-weight: 100;
   }
 }
+
+
+@include respond(tab-port){
+  .card {
+    height: auto;
+    &__side {
+      height: auto;
+      transition: all 0.8s ease;
+      position: relative;
+      border-radius: 3px
+      &--front {
+        background-color: $color-white;
+      }
+      &--back {
+        transform: rotateY(0deg);
+      
+      }
+    }
+  
+    &:hover &__side--front {
+      transform: rotateY(0deg);
+    }
+
+    //Front side styling
+
+    &__cta {
+      position: relative;
+      top: 0%;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 4rem;
+ 
+    }
+    &__price-box {
+
+      margin-bottom: 8rem;
+    }
+
+    &__price-value {
+      font-size: 6rem;
+    }
+  }
+}
